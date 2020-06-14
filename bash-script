@@ -1,0 +1,46 @@
+# Andy
+#unset color_prompt force_color_prompt
+PS1='\[\033[01;33m\]\u \[\033[01;33m\]\$ \[\033[00m\]'
+
+# Andy: always require confirmation
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+# Andy: ls related commands
+alias l='ls -l'
+alias la='ls -a'
+# also, "la" and default ls are natively supported
+
+# Andy: JDK
+##JAVA_HOME=/usr/lib/jdk
+##PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+##export JAVA_HOME
+##export JRE_HOME
+
+# Andy: Google App Engine
+export PATH=$PATH:/usr/lib/google_appengine/
+export PATH
+alias glocal='dev_appserver.py'
+alias gdeploy='appcfg.py update'
+
+# Andy: Visual Studio Code
+alias v='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
+
+# Andy: iTerm
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# Andy: Partial history search
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# Andy: display Git branch name
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# Andy: directory shortcut
+export leetcode="/Users/andyhe/CSProjects/data-structures-and-algorithms/leetcode"
+
+export config="/Users/andyhe/CSProjects/config"
